@@ -1,6 +1,8 @@
 html {
   box-sizing: border-box;
   font-size: 100%;
+  margin: 0;
+  padding: 0%;
 }
 
 *,
@@ -24,6 +26,14 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+.visually-hidden:focus {
+  left: 0px;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 1px solid;
 }
 
 h1, h2, h3 {
@@ -60,6 +70,7 @@ a, a:visited, a:active {
   --text-dark: hsl(233, 14%, 25%);
   --text-light: hsl(0, 0%, 100%);
   --hero-bg: hsl(232, 58%, 55%);
+  --header-bg: hsl(232, 58%, 55%);
   --button-primary-bg: hsl(180, 100%, 42%);
   --button-primary-text: hsl(233, 14%, 25%);
   --button-secondary-bg: transparent;
