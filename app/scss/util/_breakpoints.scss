@@ -1,27 +1,29 @@
-@use 'functions' as f;
+@use 'functions' as f; // Import the 'functions' module and give it an alias 'f' for easier access.
 
-// 700px, 900px, 1440px
+// Define breakpoints for minimum widths at 700px, 900px, and 1440px.
 $breakpoints-up: (
-    "medium": 43.75em,
-    "large" : 56.25em,
-    "xlarge" : 90em,
+    "medium": 43.75em,  // 700px minimum width breakpoint
+    "large" : 56.25em,  // 900px minimum width breakpoint
+    "xlarge" : 90em,    // 1440px minimum width breakpoint
 );
 
-// 699.98px, 899.98px, 1439.98px
+// Define breakpoints for maximum widths just below 700px, 900px, and 1440px.
 $breakpoints-down: (
-    'small': 43.7485em,
-    'medium': 56.24875em,
-    'large': 89.9875em
+    'small': 43.7485em,  // 699.98px maximum width breakpoint
+    'medium': 56.24875em, // 899.98px maximum width breakpoint
+    'large': 89.9875em    // 1439.98px maximum width breakpoint
 );
 
+// Mixin for applying styles at or above a specified minimum breakpoint.
 @mixin breakpoint($size) {
-    @media (min-width: map-get($breakpoints-up, $size)) {
-        @content;
+    @media (min-width: map-get($breakpoints-up, $size)) { // Use min-width with specified breakpoint
+        @content; // Include any nested styles here
     }
 }
 
+// Mixin for applying styles at or below a specified maximum breakpoint.
 @mixin breakpoint-down($size){
-    @media (max-width: map-get($breakpoints-down, $size)){
-        @content;
+    @media (max-width: map-get($breakpoints-down, $size)){ // Use max-width with specified breakpoint
+        @content; // Include any nested styles here
     }
 }

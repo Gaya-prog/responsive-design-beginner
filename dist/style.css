@@ -16,12 +16,13 @@ body {
   padding: 0;
   font-family: "Source Sans 3", serif;
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text-dark);
 }
 
 img {
   display: block;
   height: auto;
+  width: 100%;
 }
 
 .visually-hidden {
@@ -56,10 +57,13 @@ h1 {
 h2 {
   font-size: 2.25rem;
   font-size: clamp(2.25rem, 1.91rem + 1.45vw, 3rem);
+  line-height: 1.1;
+  margin-block-end: 1.25rem;
 }
 
 h3 {
   font-size: 1.5rem;
+  line-height: 1;
 }
 
 p {
@@ -82,28 +86,31 @@ a, a:visited, a:active {
 }
 
 :root {
-  --main-bg: hsl(0, 0%, 100%);
-  --text-dark: hsl(233, 14%, 25%);
-  --text-light: hsl(0, 0%, 100%);
-  --hero-bg: hsl(232, 58%, 55%);
-  --header-bg: hsl(232, 58%, 55%);
-  --button-primary-bg: hsl(180, 100%, 42%);
-  --button-primary-bg-hover: hsl(180, 100%, 37%);
-  --button-primary-text: hsl(233, 14%, 25%);
-  --button-secondary-bg: transparent;
-  --button-secondary-bg-hover: hsl(0, 0%, 100%);
-  --button-secondary-border: hsl(0, 0%, 100%);
-  --button-secondary-text: hsl(0, 0%, 100%);
-  --button-secondary-text-hover:var(--hero-bg);
-  --fullwidth-bg: hsl(320, 85%, 41%);
+  /* Define global color variables to ensure consistent color use throughout the site */
+  --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
+  --text-dark: hsl(233, 14%, 25%); /* Dark text color */
+  --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
+  --hero-bg: hsl(232, 58%, 55%); /* Background color for hero section */
+  --header-bg: hsl(232, 58%, 55%); /* Background color for header, matches hero */
+  /* Primary button styling variables */
+  --button-primary-bg: hsl(180, 100%, 42%); /* Primary button background color */
+  --button-primary-bg-hover: hsl(180, 100%, 37%); /* Darker color for primary button on hover */
+  --button-primary-text: hsl(233, 14%, 25%); /* Dark text color for primary buttons */
+  /* Secondary button styling variables */
+  --button-secondary-bg: transparent; /* Transparent background for secondary button */
+  --button-secondary-bg-hover: hsl(0, 0%, 100%); /* White background on hover for secondary button */
+  --button-secondary-border: hsl(0, 0%, 100%); /* White border for secondary button */
+  --button-secondary-text: hsl(0, 0%, 100%); /* White text color for secondary button */
+  --button-secondary-text-hover: var(--hero-bg); /* Text color on hover for secondary button, matches hero background */
+  --fullwidth-bg: hsl(320, 85%, 41%); /* Background color for full-width sections */
 }
 
 .magenta {
-  background-color: hsl(300, 100%, 35%);
+  background-color: hsl(300, 100%, 35%); /* Strong magenta background color */
 }
 
 .green {
-  background-color: hsl(120, 95%, 17%);
+  background-color: hsl(120, 95%, 17%); /* Dark green background color */
 }
 
 .button {
@@ -133,14 +140,19 @@ a, a:visited, a:active {
   color: var(--button-secondary-text);
   border: 0.125rem solid var(--button-secondary-border);
 }
-.button.secondary:hover {
+.button:hover {
   background-color: var(--button-secondary-bg-hover);
-  color: var(--button-secondary-text-hover);
 }
 
 .wrapper {
   width: min(100% - 3rem, 75rem);
   margin-inline: auto;
+  padding-block: 60px;
+}
+@media (min-width: 56.25em) {
+  .wrapper {
+    padding-block: 80px;
+  }
 }
 
 .topnav {
@@ -234,4 +246,58 @@ a, a:visited, a:active {
 }
 .hero__button:first-of-type {
   margin-inline-end: 20px;
+}
+
+.features__wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 56.25em) {
+  .features__wrapper {
+    flex-wrap: nowrap;
+    gap: 5.5%;
+  }
+}
+.features__item {
+  text-align: center;
+}
+@media (min-width: 56.25em) {
+  .features__item {
+    flex: 1;
+    text-align: start;
+  }
+}
+.features__icon {
+  width: auto;
+  height: 3rem;
+  margin-block-end: 10px;
+}
+@media (max-width: 56.24875em) {
+  .features__icon {
+    margin-inline: auto;
+  }
+}
+.features__title {
+  margin-block-end: 0.625rem;
+}
+.features__description {
+  max-width: 50ch;
+  margin-block-end: 0;
+}
+
+.fw-feature {
+  background-color: var(--fullwidth-bg);
+  color: var(--text-light);
+  text-align: center;
+}
+.fw-feature__description {
+  max-width: 70ch;
+  margin-inline: auto;
+  margin-block-end: 2.5rem;
+}
+.fw-feature__image {
+  max-width: 49.5rem;
+  margin-inline: auto;
 }/*# sourceMappingURL=style.css.map */

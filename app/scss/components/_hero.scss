@@ -1,57 +1,44 @@
-@use '../util/' as u;
+@use '../util/' as u; // Import the utility functions module with the alias 'u'.
 
-.hero {
-    background-color: var(--hero-bg);
-    color: var(--text-light) ;
+.hero { 
+    background-color: var(--hero-bg); // Set the background color for the hero section using a custom property.
+    color: var(--text-light); // Set text color to light using a custom property.
 
-    &__wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        // display: grid;
-        // grid-template-columns: 1fr;
-        // justify-items: center;
-        gap: 40px;
-        padding-block: 30px 60px;
+    &__wrapper { // Wrapper for the hero content (image and text)
+        display: flex; // Use flexbox for layout.
+        flex-direction: column; // Stack items vertically by default (image above text).
+        align-items: center; // Center the items horizontally.
+        gap: 40px; // Add space between items (image and text).
 
-        @include u.breakpoint(large){
-            flex-direction: row-reverse;
-            //grid-template-columns: 6fr 5fr;
-            padding-block: 40px 80px;
-            gap: 10%;
+        padding-block: 30px 60px; // Vertical padding of 30px on top and 60px on bottom.
+
+        @include u.breakpoint(large) { 
+            flex-direction: row-reverse; // Reverse the order of elements on large screens (text on the left, image on the right).
+            padding-block: 40px 80px; // Increase vertical padding on large screens (40px top, 80px bottom).
+            gap: 10%; // Add 10% gap between the text and image on large screens.
         }
     }
 
-    &__image{
-        width: 61%;
-        max-width: u.rem(483);
+    &__image { // Image within the hero section
+        width: 61%; // Set image width to 61% of its container by default.
+        max-width: u.rem(483); // Set a maximum width for the image of 483px, converted to rem.
 
-        @include u.breakpoint(large){
-             flex: 5; //image takes up 5 columns
-             // order: 2;
-             // width: 100%;
+        @include u.breakpoint(large) {
+            flex: 5; // On large screens, the image takes up 5 parts of the layout (out of 11 total parts).
         }
 
-        // @include u.breakpoint(large){
-        //     width: u.rem(483);
-        // }
+        // The commented-out section provides an alternate approach where grid or width settings could be used instead.
     }
 
-    &__text {
-        @include u.breakpoint(large){
-         flex: 6; // text takes up 6 columns
+    &__text { // Text content within the hero section
+        @include u.breakpoint(large) {
+            flex: 6; // On large screens, the text takes up 6 parts of the layout (out of 11 total parts).
         }
     }
 
-    &__title {
-    }
-
-    &__content {
-    }
-
-    &__button {
-        &:first-of-type {
-            margin-inline-end: 20px;
+    &__button { // Button styling within the hero section
+        &:first-of-type { 
+            margin-inline-end: 20px; // Add 20px margin to the right of the first button.
         }
     }
 }

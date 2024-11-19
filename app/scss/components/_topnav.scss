@@ -1,64 +1,63 @@
-@use '../util/' as u;
+@use '../util/' as u; // Import the utilities module and alias it as 'u' for easy access.
 
 .topnav {
-    background-color: var(--header-bg);
+    background-color: var(--header-bg); // Set the background color for the top navigation bar.
 
-    &__wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-block: 12px;
+    &__wrapper { // Wrapper for the navigation content (logo, links, etc.)
+        display: flex; // Display elements in a row.
+        justify-content: space-between; // Distribute space between elements to align them to the edges.
+        align-items: center; // Center items vertically.
+        padding-block: 12px; // Padding of 12px on top and bottom.
 
         @include u.breakpoint(large) {
-            padding-block: 20px;
+            padding-block: 20px; // Increase padding to 20px on large screens.
         }
     }
 
-    &__homelink {
+    &__homelink { // Home link styles
         &:hover {
-            opacity: 0.8;
+            opacity: 0.8; // Slightly reduce opacity on hover for a visual effect.
         }
     }
 
-    &__logo {
-        width: u.rem(70);
+    &__logo { // Logo styles
+        width: u.rem(70); // Set logo width to 70px, converted to rem for scalability.
 
         @include u.breakpoint(large) {
-            width: u.rem(128);
+            width: u.rem(128); // Increase logo width to 128px on large screens.
         }
     }
 
-    &__links {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        gap: 20px;
+    &__links { // Container for navigation links
+        display: flex; // Display links in a row.
+        margin: 0; // Remove default margin.
+        padding: 0; // Remove default padding.
+        gap: 20px; // Set 20px gap between links.
 
         @include u.breakpoint(large) {
-            gap: 40px;
+            gap: 40px; // Increase gap to 40px between links on large screens.
         }
     }
 
-    &__item {
-        list-style-type: none;
+    &__item { // Styles for each navigation item (list item)
+        list-style-type: none; // Remove default bullet points from list items.
     }
 
-    &__link {
-        font-size: u.rem(14);
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        color: var(--text-light);
-        text-transform: uppercase;
+    &__link { // Styles for each navigation link
+        font-size: u.rem(14); // Set font size to 14px, converted to rem.
+        font-weight: 700; // Bold font weight.
+        letter-spacing: 0.05em; // Slight letter spacing for readability.
+        color: var(--text-light); // Light text color, set as a custom property.
+        text-transform: uppercase; // Transform text to uppercase.
 
         @include u.breakpoint(large) {
-            font-size: u.rem(16);
+            font-size: u.rem(16); // Increase font size to 16px on large screens.
         }
 
         &:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 2px ;
-            text-underline-offset: 4px;
-
+            text-decoration: underline; // Add underline on hover.
+            text-decoration-thickness: 2px; // Set underline thickness to 2px for emphasis.
+            text-underline-offset: 4px; // Set underline offset to 4px for better readability.
         }
     }
 }

@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mythos</title>
+    <meta charset="UTF-8"> <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport settings for responsive design -->
+    <title>Mythos</title> <!-- Title of the web page -->
+    
+    <!-- Favicons for different devices -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="/site.webmanifest" /> <!-- Web app manifest -->
+
+    <!-- Preconnect to external font and resource sources for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts inclusion -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- External CSS file -->
     <link rel="stylesheet" href="/dist/style.css">
+    
+    <!-- External JavaScript file -->
     <script src="/app/js/script.js"></script>
 </head>
 <body>
+
+    <!-- Skip link to main content for accessibility -->
     <a href="#main" class="visually-hidden"> Skip to main content </a>
+
+    <!-- Header section with top navigation -->
     <header class="topnav">
-        <h2 class="visually hidden"><Header></h2>
+        <h2 class="visually hidden"><Header></h2> <!-- Visually hidden header for accessibility -->
+        
+        <!-- Wrapper for top navigation content -->
         <div class="wrapper topnav__wrapper">
+            <!-- Home link -->
             <a href="/" class="topnav__homelink">
                 <img src="/img/logo-mythos.svg" alt="Mythos Homepage" class="topnav__logo" width="128" height="36"/>
             </a>
+
+            <!-- Navigation links -->
             <nav>
                 <ul class="topnav__links">
                     <li class="topnav__item">
-                        <a href="" class="topnav__link">Features</a>
+                        <a href="" class="topnav__link">Features</a> <!-- Feature link -->
                     </li>
 
                     <li class="topnav__item">
-                        <a href="" class="topnav__link">Pricing</a>
+                        <a href="" class="topnav__link">Pricing</a> <!-- Pricing link -->
                     </li>
 
                     <li class="topnav__item">
-                        <a href="" class="topnav__link">About</a>
+                        <a href="" class="topnav__link">About</a> <!-- About link -->
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- Main content area -->
     <main id="main">
         <article>
             <section class="hero">
+                <!-- Hero section wrapper with image and text -->
                 <div class="wrapper hero__wrapper">
                     <img 
                     src="/img/unicorn.svg" 
@@ -50,14 +72,54 @@
                     width="483" height="486"
                     />
                     <div class="hero__text">
-                        <h1 class="hero__title">Find that elusive unicorn.</h1>
-                        <p class="hero__content large">Mythos will enable you to discover the newest startups to invest in. Powered by AI, used by millions of humans.</p>
-                        <a href="http://" class="hero__button button primary">Free Trial</a><a href="http://" class="hero__button button secondary">Pricing</a>
+                        <h1 class="hero__title">Find that elusive unicorn.</h1> <!-- Hero section title -->
+                        <p class="hero__content large">Mythos will enable you to discover the newest startups to invest in. Powered by AI, used by millions of humans.</p> <!-- Hero section description -->
+                        <!-- Call-to-action buttons -->
+                        <a href="http://" class="hero__button button primary">Free Trial</a>
+                        <a href="http://" class="hero__button button secondary">Pricing</a>
                     </div>
+                </div>
+            </section>
+            <section class="features">
+                <h2 class="visually hidden"><Features></h2>
+                <div class="wrapper features__wrapper">
+                    <div class="features__item">
+                        <img src="/img/icon-asterisk.svg" alt="" width="43" height="48" class="features__icon">
+                        <h3 class="features__title">AI-powered matching</h3>
+                        <p class="features__description">Phasellus ac mi magna. Sed scelerisque, turpis vitae consequat vehicula, sem turpis pretium tellus, tempor posuere turpis est ac velit.</p>
+                    </div>
+
+                    <div class="features__item">
+                        <img src="/img/icon-bell.svg" alt="" width="41" height="48" class="features__icon">
+                        <h3 class="features__title">Immediate notifications</h3>
+                        <p class="features__description">Mauris id vestibulum metus, ut pretium lacus. Phasellus ac mi magna. Sed scelerisque, turpis vitae consequat vehicula, sem turpis pretium tellus, tempor posuere turpis est ac velit.</p>
+                    </div>
+
+                    <div class="features__item">
+                        <img src="/img/icon-payments.svg" alt="" width="60.57" height="48" class="features__icon">
+                        <h3 class="features__title">Protected payments</h3>
+                        <p class="features__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum metus, ut pretium lacus.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="fw-feature">
+                <div class="wrapper fw-feature__wrapper">
+                    <h2 class="fw-feature__title">Angel investment matching in real time.</h2>
+                    <p class="fw-feature__description medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum 
+                        metus, ut pretium lacus. Phasellus ac mi magna. Sed scelerisque, turpis vitae.</p>
+                        <img 
+                        src="img/laptop-dashboard.svg" 
+                        alt="open laptop showing a dashboard on the screen" 
+                        class="fw-feature__image" 
+                        width="792" 
+                        height="465">
                 </div>
             </section>    
         </article>
     </main>
+
+    <!-- Footer section (empty for now) -->
     <footer></footer>
+
 </body>
 </html>

@@ -1,37 +1,41 @@
-@use '../util' as u;
+@use '../util' as u; // Import the utility module and alias it as 'u' for easy access.
 
+// Base styles for the .button class
 .button {
-    display: inline-block;
-    font-size: u.rem(18);
-    line-height: 1;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: u.rem(10) u.rem(14);
-    border-radius: u.rem(24);
-    transition-property: background-color, border, color;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in-out;
+    display: inline-block; // Display as an inline-block element
+    font-size: u.rem(18); // Set font size to 18px converted to rem using the 'rem' function from the util module
+    line-height: 1; // Set line height to 1 for consistent vertical spacing
+    font-weight: 700; // Bold font weight
+    letter-spacing: 0.05em; // Add slight spacing between letters
+    text-transform: uppercase; // Make text uppercase
+    padding: u.rem(10) u.rem(14); // Padding: 10px top/bottom and 14px left/right, converted to rem
+    border-radius: u.rem(24); // Rounded corners with a 24px radius, converted to rem
+    transition-property: background-color, border, color; // Transition effects for background, border, and color
+    transition-duration: 200ms; // Duration of transition effects set to 200 milliseconds
+    transition-timing-function: ease-in-out; // Smooth transition with ease-in-out effect
 
+    // Styles for the primary button variant
     &.primary {
-        background-color: var(--button-primary-bg);
-        color: var(--button-primary-text);
-        border: u.rem(2) solid var(--button-primary-bg);
+        background-color: var(--button-primary-bg); // Primary button background color
+        color: var(--button-primary-text); // Primary button text color
+        border: u.rem(2) solid var(--button-primary-bg); // 2px solid border with primary background color
 
+        // Hover state for the primary button
         &:hover {
-            background-color: var(--button-primary-bg-hover);
-            border: u.rem(2) solid var(--button-primary-bg-hover);
+            background-color: var(--button-primary-bg-hover); // Darker background color on hover
+            border: u.rem(2) solid var(--button-primary-bg-hover); // Match border color to hover background
         }
     }
 
+    // Styles for the secondary button variant
     &.secondary {
-        background-color: var(--button-secondary-bg);
-        color: var(--button-secondary-text);
-        border: u.rem(2) solid var(--button-secondary-border);
+        background-color: var(--button-secondary-bg); // Secondary button background color
+        color: var(--button-secondary-text); // Secondary button text color
+        border: u.rem(2) solid var(--button-secondary-border); // 2px solid border with secondary border color
+    }
 
+        // Hover state for the secondary button
         &:hover {
-            background-color: var(--button-secondary-bg-hover);
-            color: var(--button-secondary-text-hover);
+            background-color: var(--button-secondary-bg-hover); 
         }
     }
-}
