@@ -1,0 +1,12 @@
+@use 'functions' as f; // x use util because it is in the same folder so must be specific
+
+@mixin fullwidth {
+    color: var(--text-light);
+    text-align: center;
+    
+    &__description{
+        max-width: 70ch;
+        margin-inline: auto;
+        margin-block-end: u.rem(40);
+    }
+}

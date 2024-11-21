@@ -25,6 +25,16 @@
             background-color: var(--button-primary-bg-hover); // Darker background color on hover
             border: u.rem(2) solid var(--button-primary-bg-hover); // Match border color to hover background
         }
+
+        &.white {
+            background-color: var(--button-primary-white-bg); // Primary button background color
+            border: u.rem(2) solid var(--button-primary-white-bg); // 2px solid border with primary background color
+    
+            &:hover {
+                background-color: var(--button-primary-white-bg-hover); // Darker background color on hover
+                border: u.rem(2) solid var(--button-primary-white-bg-hover); // Match border color to hover background
+            } 
+        }
     }
 
     // Styles for the secondary button variant
