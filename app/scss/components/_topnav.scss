@@ -15,9 +15,6 @@
     }
 
     &__homelink { // Home link styles
-        &:hover {
-            opacity: 0.8; // Slightly reduce opacity on hover for a visual effect.
-        }
     }
 
     &__logo { // Logo styles
@@ -30,17 +27,11 @@
 
     &__links { // Container for navigation links
         display: flex; // Display links in a row.
-        margin: 0; // Remove default margin.
-        padding: 0; // Remove default padding.
         gap: 20px; // Set 20px gap between links.
 
         @include u.breakpoint(large) {
             gap: 40px; // Increase gap to 40px between links on large screens.
         }
-    }
-
-    &__item { // Styles for each navigation item (list item)
-        list-style-type: none; // Remove default bullet points from list items.
     }
 
     &__link { // Styles for each navigation link

@@ -29,6 +29,14 @@ figure, blockquote {
   margin: 0;
 }
 
+header ul, footer ul {
+  margin: 0;
+  padding: 0;
+}
+header ul li, footer ul li {
+  list-style-type: none;
+}
+
 .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -44,6 +52,10 @@ figure, blockquote {
   background-color: #fff;
   padding: 0.5rem;
   border: 1px solid;
+}
+
+.hover-fade:hover {
+  opacity: 0.8;
 }
 
 h1, h2, h3 {
@@ -94,11 +106,14 @@ a, a:visited, a:active {
   --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
   --text-dark: hsl(233, 14%, 25%); /* Dark text color */
   --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
+  --text-link-hover: hsl(320, 85%, 41%);
   --hero-bg: hsl(232, 58%, 55%); /* Background color for hero section */
   --header-bg: hsl(232, 58%, 55%); /* Background color for header, matches hero */
   /* Primary button styling variables */
   --button-primary-bg: hsl(180, 100%, 42%); /* Primary button background color */
   --button-primary-bg-hover: hsl(180, 100%, 37%); /* Darker color for primary button on hover */
+  --button-primary-white-bg: hsl(0, 0%, 100%); /* Primary button background color */
+  --button-primary-white-bg-hover: hsl(0, 0%, 100%); /* Darker color for primary button on hover */
   --button-primary-text: hsl(233, 14%, 25%); /* Dark text color for primary buttons */
   /* Secondary button styling variables */
   --button-secondary-bg: transparent; /* Transparent background for secondary button */
@@ -142,6 +157,14 @@ a, a:visited, a:active {
   background-color: var(--button-primary-bg-hover);
   border: 0.125rem solid var(--button-primary-bg-hover);
 }
+.button.primary.white {
+  background-color: var(--button-primary-white-bg);
+  border: 0.125rem solid var(--button-primary-white-bg);
+}
+.button.primary.white:hover {
+  background-color: var(--button-primary-white-bg-hover);
+  border: 0.125rem solid var(--button-primary-white-bg-hover);
+}
 .button.secondary {
   background-color: var(--button-secondary-bg);
   color: var(--button-secondary-text);
@@ -149,6 +172,16 @@ a, a:visited, a:active {
 }
 .button:hover {
   background-color: var(--button-secondary-bg-hover);
+}
+
+.fullwidth {
+  color: var(--text-light);
+  text-align: center;
+}
+.fullwidth__description {
+  max-width: 70ch;
+  margin-inline: auto;
+  margin-block-end: 2.5rem;
 }
 
 .wrapper {
@@ -176,9 +209,6 @@ a, a:visited, a:active {
     padding-block: 20px;
   }
 }
-.topnav__homelink:hover {
-  opacity: 0.8;
-}
 .topnav__logo {
   width: 4.375rem;
 }
@@ -189,17 +219,12 @@ a, a:visited, a:active {
 }
 .topnav__links {
   display: flex;
-  margin: 0;
-  padding: 0;
   gap: 20px;
 }
 @media (min-width: 56.25em) {
   .topnav__links {
     gap: 40px;
   }
-}
-.topnav__item {
-  list-style-type: none;
 }
 .topnav__link {
   font-size: 0.875rem;
@@ -296,13 +321,6 @@ a, a:visited, a:active {
 
 .fw-feature {
   background-color: var(--fullwidth-bg);
-  color: var(--text-light);
-  text-align: center;
-}
-.fw-feature__description {
-  max-width: 70ch;
-  margin-inline: auto;
-  margin-block-end: 2.5rem;
 }
 .fw-feature__image {
   max-width: 49.5rem;
@@ -345,9 +363,66 @@ a, a:visited, a:active {
 }
 
 .fw-cta {
-  background: linear-gradient(var(--gradient1), var(--gradient2), var(--gradient3));
-  color: var(--text-light);
-  display: flex;
+  background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 75%, var(--gradient3) 150%);
+}
+@media (min-width: 56.25em) {
+  .fw-cta {
+    background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 55%, var(--gradient3) 110%);
+  }
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.25rem;
+}
+@includeu .breakpoint(medium) {
+  .footer__wrapper {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+.footer__logo {
+  grid-column: 1/-1;
+}
+.footer__homelink {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.footer__logo-image {
+  width: 8rem;
+  margin-block-end: 0.625rem;
+}
+.footer__copyright {
+  line-height: 1;
+  margin-block-end: 0;
+}
+.footer__column-title {
+  font-size: 1.375rem;
+  line-height: 1.1;
+  margin-block-end: 1.125rem;
+}
+.footer__links {
+  display: grid;
+  gap: 0.625rem;
+}
+.footer__link {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--text-dark);
+}
+.footer__link:hover {
+  color: var(--text-link-hover);
+}
+.footer__link:hover .footer__social-path {
+  fill: var(--text-link-hover);
+}
+.footer__social {
+  width: 1.125rem;
+}
+.footer__social-path {
+  fill: var(--text-dark);
 }/*# sourceMappingURL=style.css.map */

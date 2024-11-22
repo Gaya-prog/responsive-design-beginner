@@ -33,7 +33,14 @@ figure, blockquote{
     margin: 0;
 }
 
+header ul, footer ul {
+    margin: 0; // Remove default margin
+    padding: 0; // Remove default padding
 
+    li{
+        list-style-type: none; // Remove default bullet points from list items.
+    }
+}
 
 .visually-hidden {
     position: absolute;
@@ -50,5 +57,11 @@ figure, blockquote{
         background-color: #fff;
         padding: 0.5rem;
         border: 1px solid;
-}
+        }
     }
+
+.hover-fade {
+    &:hover {
+        opacity: 0.8; // Slightly reduce opacity on hover for a visual effect.
+    }
+}

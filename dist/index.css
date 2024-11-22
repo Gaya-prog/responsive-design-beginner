@@ -29,6 +29,14 @@ figure, blockquote {
   margin: 0;
 }
 
+header ul, footer ul {
+  margin: 0;
+  padding: 0;
+}
+header ul li, footer ul li {
+  list-style-type: none;
+}
+
 .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -44,6 +52,10 @@ figure, blockquote {
   background-color: #fff;
   padding: 0.5rem;
   border: 1px solid;
+}
+
+.hover-fade:hover {
+  opacity: 0.8;
 }
 
 h1, h2, h3 {
@@ -94,6 +106,7 @@ a, a:visited, a:active {
   --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
   --text-dark: hsl(233, 14%, 25%); /* Dark text color */
   --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
+  --text-link-hover: hsl(320, 85%, 41%);
   --hero-bg: hsl(232, 58%, 55%); /* Background color for hero section */
   --header-bg: hsl(232, 58%, 55%); /* Background color for header, matches hero */
   /* Primary button styling variables */
